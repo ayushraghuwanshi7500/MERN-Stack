@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-const alert = (props) => {
+const alert = ({alerts}) => {
   return <div></div>;
 };
 
-alert.propTypes = {};
+alert.propTypes = {
+    alerts:PropTypes.array.isRequired;
+};
 
 const mapStateToProps = (state) => ({
   alerts: state.alert
