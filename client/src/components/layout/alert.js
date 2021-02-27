@@ -8,4 +8,8 @@ const alert = (props) => {
 
 alert.propTypes = {};
 
+const mapStateToProps = (state) => ({
+  alerts: state.alert
+});
+
 export default connect()(Alert);
