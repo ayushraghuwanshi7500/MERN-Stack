@@ -17,7 +17,7 @@ router.post(
     check(
       'password',
       'please enter  a password with 6 or more password'
-    ).isLength({ min: 6 }),
+    ).isLength({ min: 6 })
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -39,14 +39,14 @@ router.post(
       const avatar = gravatar.url(email, {
         s: '200',
         r: 'pg',
-        d: 'mm',
+        d: 'mm'
       });
 
       user = new User({
         name,
         email,
         avatar,
-        password,
+        password
       });
 
       // Encrypt password using bcrypt
@@ -60,8 +60,8 @@ router.post(
 
       const payload = {
         user: {
-          id: user.id,
-        },
+          id: user.id
+        }
       };
       jwt.sign(
         payload,
