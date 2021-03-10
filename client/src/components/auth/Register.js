@@ -104,7 +104,7 @@ const Register = ({ setAlert }) => {
   );
 };
 
-Register.PropTypes = {
+Register.propTypes = {
   setAlert: PropTypes.func.isRequired
 };
 
